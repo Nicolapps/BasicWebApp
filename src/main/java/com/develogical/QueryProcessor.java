@@ -92,6 +92,7 @@ public class QueryProcessor {
 
         if (query.contains("Eiffel tower")) return "Paris";
         if (query.contains("banana")) return "Yellow";
+        if (query.contains("Theresa May")) return "2016";
 
 
         return "";

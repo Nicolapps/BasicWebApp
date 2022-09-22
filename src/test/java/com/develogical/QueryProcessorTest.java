@@ -15,6 +15,10 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("test"), is(""));
     }
 
+    @Test public void theresa() throws Exception {
+        assertThat(queryProcessor.process("which year was Theresa May first elected as the Prime Minister of Great Britain"), is("2016"));
+    }
+
 
     @Test public void plus() throws Exception {
         assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
