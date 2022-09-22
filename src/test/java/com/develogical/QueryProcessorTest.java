@@ -19,10 +19,17 @@ public class QueryProcessorTest {
     @Test public void plus() throws Exception {
         assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
     }
+    @Test public void mult() throws Exception {
+        assertThat(queryProcessor.process("what is 2 multiplied by 3"), is("6"));
+    }
 
     @Test public void largest() throws Exception {
-        assertThat(queryProcessor.process(" which of the following numbers is the largest: 153, 63, 47, 846"), is("846"));
+        assertThat(queryProcessor.process("which of the following numbers is the largest: 153, 63, 47, 846"), is("846"));
     }
+
+//    @Test public void cubeThing() throws Exception {
+//        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 729, 695, 576, 1764"), is("846"));
+//    }
 
     @Test
     public void knowsAboutShakespeare() throws Exception {

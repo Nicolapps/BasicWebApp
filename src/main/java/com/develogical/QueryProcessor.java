@@ -1,5 +1,7 @@
 package com.develogical;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -26,6 +28,15 @@ public class QueryProcessor {
             return Integer.toString(res);
         }
 
+
+        Matcher mx = Pattern.compile("what is (\\d+) multiplied by (\\d+)").matcher(query);
+        if (mx.find()) {
+            String s1 = mx.group(1);
+            String s2 = mx.group(2);
+            int res = (Integer.parseInt(s1) * Integer.parseInt(s2));
+            return Integer.toString(res);
+        }
+
         Matcher m2 = Pattern.compile("which of the following numbers is the largest: (.+)").matcher(query);
         if (m2.find()) {
             String numbers = m2.group(1);
@@ -39,6 +50,25 @@ public class QueryProcessor {
 
             return Integer.toString(largest);
         }
+
+//        Matcher m3 = Pattern.compile("which of the following numbers is both a square and a cube: (.+)").matcher(query);
+//        if (m3.find()) {
+//            String numbers = m3.group(1);
+//            String[] numbersStr = numbers.split(", ");
+//
+//            int largest = Integer.MIN_VALUE;
+//
+//            List<Integer> res = new ArrayList<>();
+//            for (String x : numbersStr) {
+//                int toInt = Integer.parseInt(x);
+//
+//                if (Math.sqrt(toInt) * )
+//
+//                if (toInt > largest) largest = toInt;
+//            }
+//
+//            return res.stream().collect();
+//        }
 
 
         return "";
