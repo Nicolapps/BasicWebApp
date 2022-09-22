@@ -20,6 +20,11 @@ public class QueryProcessorTest {
     }
 
 
+    @Test public void fib() throws Exception {
+        assertThat(queryProcessor.process("what is the 12th number in the Fibonacci sequence"), is("144"));
+    }
+
+
     @Test public void plus() throws Exception {
         assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
     }    @Test public void minus() throws Exception {

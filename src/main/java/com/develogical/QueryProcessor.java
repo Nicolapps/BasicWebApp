@@ -29,6 +29,13 @@ public class QueryProcessor {
             return Integer.toString(res);
         }
 
+
+        Matcher mfib = Pattern.compile("hat is the (\\d*).* number in the Fibonacci sequence").matcher(query);
+        if (mfib.find()) {
+            String s1 = mfib.group(1);
+            return Integer.toString(fib(Integer.parseInt(s1)));
+        }
+
         Matcher mmmmmm = Pattern.compile("what is (-?\\d+) minus (-?\\d+)").matcher(query);
         if (mmmmmm.find()) {
             String s1 = mmmmmm.group(1);
@@ -90,6 +97,7 @@ public class QueryProcessor {
             return res.stream().collect(Collectors.joining(", "));
         }
 
+
         if (query.contains("Eiffel tower")) return "Paris";
         if (query.contains("banana")) return "Yellow";
         if (query.contains("Theresa May")) return "2016";
@@ -97,4 +105,13 @@ public class QueryProcessor {
 
         return "";
     }
+
+    // https://www.geeksforgeeks.org/program-for-nth-fibonacci-number/
+    static int fib(int n)
+    {
+        if (n <= 1)
+            return n;
+        return fib(n - 1) + fib(n - 2);
+    }
+
 }
