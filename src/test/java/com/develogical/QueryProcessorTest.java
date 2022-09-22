@@ -18,6 +18,8 @@ public class QueryProcessorTest {
 
     @Test public void plus() throws Exception {
         assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
+    }    @Test public void minus() throws Exception {
+        assertThat(queryProcessor.process("what is 2 minus 3"), is("-1"));
     }
     @Test public void mult() throws Exception {
         assertThat(queryProcessor.process("what is 2 multiplied by 3"), is("6"));
@@ -25,6 +27,9 @@ public class QueryProcessorTest {
     @Test public void eifel() throws Exception {
         assertThat(queryProcessor.process("which city is the Eiffel tower in"), is("Paris"));
     }
+//    @Test public void primes() throws Exception {
+//        assertThat(queryProcessor.process("which of the following numbers are primes: 41, 283, 679, 617"), is("Paris"));
+//    }
 
     @Test public void banana() throws Exception {
         assertThat(queryProcessor.process("what colour is a banana"), is("Yellow"));

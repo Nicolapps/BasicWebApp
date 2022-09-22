@@ -29,6 +29,23 @@ public class QueryProcessor {
             return Integer.toString(res);
         }
 
+        Matcher mmmmmm = Pattern.compile("what is (-?\\d+) minus (-?\\d+)").matcher(query);
+        if (mmmmmm.find()) {
+            String s1 = mmmmmm.group(1);
+            String s2 = mmmmmm.group(2);
+            int res = (Integer.parseInt(s1) - Integer.parseInt(s2));
+            return Integer.toString(res);
+        }
+
+
+        Matcher asuhdahuidfihu = Pattern.compile("what is (-?\\d+) divided by (-?\\d+)").matcher(query);
+        if (asuhdahuidfihu.find()) {
+            String s1 = asuhdahuidfihu.group(1);
+            String s2 = asuhdahuidfihu.group(2);
+            int res = (Integer.parseInt(s1) / Integer.parseInt(s2));
+            return Integer.toString(res);
+        }
+
 
         Matcher mx = Pattern.compile("what is (\\d+) multiplied by (\\d+)").matcher(query);
         if (mx.find()) {
