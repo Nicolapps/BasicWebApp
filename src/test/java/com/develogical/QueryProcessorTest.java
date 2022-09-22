@@ -36,9 +36,9 @@ public class QueryProcessorTest {
     @Test public void eifel() throws Exception {
         assertThat(queryProcessor.process("which city is the Eiffel tower in"), is("Paris"));
     }
-//    @Test public void primes() throws Exception {
-//        assertThat(queryProcessor.process("which of the following numbers are primes: 41, 283, 679, 617"), is("Paris"));
-//    }
+    @Test public void primes() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers are primes: 41, 283, 679, 617"), is("41, 283, 617"));
+    }
 
     @Test public void banana() throws Exception {
         assertThat(queryProcessor.process("what colour is a banana"), is("Yellow"));

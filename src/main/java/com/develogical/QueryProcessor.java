@@ -97,6 +97,23 @@ public class QueryProcessor {
             return res.stream().collect(Collectors.joining(", "));
         }
 
+        Matcher mPrimes = Pattern.compile("which of the following numbers are primes: (.+)").matcher(query);
+        if (mPrimes.find()) {
+            String numbers = mPrimes.group(1);
+            String[] numbersStr = numbers.split(", ");
+
+            List<String> res = new ArrayList<>();
+            for (String x : numbersStr) {
+                int toInt = Integer.parseInt(x);
+
+                if (isPrime(toInt)) {
+                    res.add(String.valueOf(toInt));
+                }
+            }
+
+            return res.stream().collect(Collectors.joining(", "));
+        }
+
 
         if (query.contains("Eiffel tower")) return "Paris";
         if (query.contains("banana")) return "Yellow";
@@ -112,6 +129,21 @@ public class QueryProcessor {
         if (n <= 1)
             return n;
         return fib(n - 1) + fib(n - 2);
+    }
+
+    // https://www.educative.io/answers/how-to-check-if-a-number-is-prime-in-java
+    static  boolean isPrime(int num)
+    {
+        if(num<=1)
+        {
+            return false;
+        }
+        for(int i=2;i<=num/2;i++)
+        {
+            if((num%i)==0)
+                return  false;
+        }
+        return true;
     }
 
 }
