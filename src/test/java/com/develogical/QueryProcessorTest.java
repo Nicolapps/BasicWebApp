@@ -14,8 +14,14 @@ public class QueryProcessorTest {
     public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
         assertThat(queryProcessor.process("test"), is(""));
     }
+
+
     @Test public void plus() throws Exception {
         assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
+    }
+
+    @Test public void largest() throws Exception {
+        assertThat(queryProcessor.process(" which of the following numbers is the largest: 153, 63, 47, 846"), is("846"));
     }
 
     @Test

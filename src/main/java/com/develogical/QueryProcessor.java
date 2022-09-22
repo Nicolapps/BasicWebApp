@@ -33,10 +33,11 @@ public class QueryProcessor {
 
             int largest = Integer.MIN_VALUE;
             for (String x : numbersStr) {
-
+                int toInt = Integer.parseInt(x);
+                if (toInt > largest) largest = toInt;
             }
 
-//            return Integer.toString(res);
+            return Integer.toString(largest);
         }
 
 
