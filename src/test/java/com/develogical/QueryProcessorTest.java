@@ -10,7 +10,11 @@ public class QueryProcessorTest {
 
     QueryProcessor queryProcessor = new QueryProcessor();
 
-    @Test
+    @Test public void minus() throws Exception {
+        assertThat(queryProcessor.process("what is 2 minus 3"), is("-1"));
+    }
+
+        @Test
     public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
         assertThat(queryProcessor.process("test"), is(""));
     }
@@ -27,11 +31,11 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("what is 0 to the power of 16"), is("0"));
     }
 
-
-    @Test public void plus() throws Exception {
-        assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
-    }    @Test public void minus() throws Exception {
-        assertThat(queryProcessor.process("what is 2 minus 3"), is("-1"));
+@Test public void plus() throws Exception {
+    assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
+}
+  @Test public void plusplus() throws Exception {
+        assertThat(queryProcessor.process("what is 13 plus 1 plus 8"), is("22"));
     }
     @Test public void mult() throws Exception {
         assertThat(queryProcessor.process("what is 2 multiplied by 3"), is("6"));

@@ -21,6 +21,15 @@ public class QueryProcessor {
             return "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.";
         }
 
+        Matcher mplusplus = Pattern.compile("what is (\\d+) plus (\\d+) plus (\\d+)").matcher(query);
+        if (mplusplus.find()) {
+            String s1 = mplusplus.group(1);
+            String s2 = mplusplus.group(2);
+            String s3 = mplusplus.group(3);
+            int res = (Integer.parseInt(s1) + Integer.parseInt(s2) + Integer.parseInt(s3));
+            return Integer.toString(res);
+        }
+
         Matcher m1 = Pattern.compile("what is (\\d+) plus (\\d+)").matcher(query);
         if (m1.find()) {
             String s1 = m1.group(1);
