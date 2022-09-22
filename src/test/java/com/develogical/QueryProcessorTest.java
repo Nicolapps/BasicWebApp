@@ -26,15 +26,15 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("which city is the Eiffel tower in"), is("Paris"));
     }
 
+    @Test public void banana() throws Exception {
+        assertThat(queryProcessor.process("what colour is a banana"), is("Yellow"));
+    }
+
     @Test public void largest() throws Exception {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 153, 63, 47, 846"), is("846"));
     }
 
     @Test public void cubeThing() throws Exception {
-        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 729, 695, 576, 1764"), is("729"));
-    }
-
-    @Test public void banana() throws Exception {
         assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 729, 695, 576, 1764"), is("729"));
     }
 
