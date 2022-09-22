@@ -30,6 +30,15 @@ public class QueryProcessor {
             return Integer.toString(res);
         }
 
+        Matcher mouhasfiiufasdhuiof = Pattern.compile("what is (\\d+) multiplied by (\\d+) plus (\\d+)").matcher(query);
+        if (mouhasfiiufasdhuiof.find()) {
+            String s1 = mouhasfiiufasdhuiof.group(1);
+            String s2 = mouhasfiiufasdhuiof.group(2);
+            String s3 = mouhasfiiufasdhuiof.group(3);
+            int res = (Integer.parseInt(s1) * Integer.parseInt(s2) + Integer.parseInt(s3));
+            return Integer.toString(res);
+        }
+
         Matcher m1 = Pattern.compile("what is (\\d+) plus (\\d+)").matcher(query);
         if (m1.find()) {
             String s1 = m1.group(1);
