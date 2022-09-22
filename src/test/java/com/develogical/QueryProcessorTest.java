@@ -14,6 +14,9 @@ public class QueryProcessorTest {
     public void returnsEmptyStringIfCannotProcessQuery() throws Exception {
         assertThat(queryProcessor.process("test"), is(""));
     }
+    @Test public void plus() throws Exception {
+        assertThat(queryProcessor.process("what is 2 plus 3"), is("5"));
+    }
 
     @Test
     public void knowsAboutShakespeare() throws Exception {
