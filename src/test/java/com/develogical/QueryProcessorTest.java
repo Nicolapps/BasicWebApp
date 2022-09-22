@@ -22,6 +22,9 @@ public class QueryProcessorTest {
     @Test public void mult() throws Exception {
         assertThat(queryProcessor.process("what is 2 multiplied by 3"), is("6"));
     }
+    @Test public void eifel() throws Exception {
+        assertThat(queryProcessor.process("which city is the Eiffel tower in"), is("Paris"));
+    }
 
     @Test public void largest() throws Exception {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 153, 63, 47, 846"), is("846"));

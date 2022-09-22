@@ -73,6 +73,8 @@ public class QueryProcessor {
             return res.stream().collect(Collectors.joining(", "));
         }
 
+        if (query.contains("Eiffel tower")) return "Paris";
+
 
         return "";
     }
