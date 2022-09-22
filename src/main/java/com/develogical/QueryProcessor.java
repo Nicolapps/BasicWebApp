@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 public class QueryProcessor {
 
@@ -51,24 +52,26 @@ public class QueryProcessor {
             return Integer.toString(largest);
         }
 
-//        Matcher m3 = Pattern.compile("which of the following numbers is both a square and a cube: (.+)").matcher(query);
-//        if (m3.find()) {
-//            String numbers = m3.group(1);
-//            String[] numbersStr = numbers.split(", ");
-//
-//            int largest = Integer.MIN_VALUE;
-//
-//            List<Integer> res = new ArrayList<>();
-//            for (String x : numbersStr) {
-//                int toInt = Integer.parseInt(x);
-//
-//                if (Math.sqrt(toInt) * )
-//
-//                if (toInt > largest) largest = toInt;
-//            }
-//
-//            return res.stream().collect();
-//        }
+        Matcher m3 = Pattern.compile("which of the following numbers is both a square and a cube: (.+)").matcher(query);
+        if (m3.find()) {
+            String numbers = m3.group(1);
+            String[] numbersStr = numbers.split(", ");
+
+            int largest = Integer.MIN_VALUE;
+
+            List<String> res = new ArrayList<>();
+            for (String x : numbersStr) {
+                int toInt = Integer.parseInt(x);
+
+                if ((Math.sqrt(toInt) % 1) == 0 && (Math.cbrt(toInt) % 1) == 0) {
+                    res.add(String.valueOf(toInt));
+                }
+
+                if (toInt > largest) largest = toInt;
+            }
+
+            return res.stream().collect(Collectors.joining(", "));
+        }
 
 
         return "";

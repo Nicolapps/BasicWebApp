@@ -27,9 +27,9 @@ public class QueryProcessorTest {
         assertThat(queryProcessor.process("which of the following numbers is the largest: 153, 63, 47, 846"), is("846"));
     }
 
-//    @Test public void cubeThing() throws Exception {
-//        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 729, 695, 576, 1764"), is("846"));
-//    }
+    @Test public void cubeThing() throws Exception {
+        assertThat(queryProcessor.process("which of the following numbers is both a square and a cube: 729, 695, 576, 1764"), is("729"));
+    }
 
     @Test
     public void knowsAboutShakespeare() throws Exception {
