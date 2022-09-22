@@ -53,6 +53,14 @@ public class QueryProcessor {
             return Integer.toString(res);
         }
 
+        Matcher poqwermorew = Pattern.compile("what is (-?\\d+) to the power of (-?\\d+)").matcher(query);
+        if (poqwermorew.find()) {
+            String s1 = poqwermorew.group(1);
+            String s2 = poqwermorew.group(2);
+            int res = (int)Math.pow(Integer.parseInt(s1), Integer.parseInt(s2));
+            return Integer.toString(res);
+        }
+
 
         Matcher mx = Pattern.compile("what is (\\d+) multiplied by (\\d+)").matcher(query);
         if (mx.find()) {

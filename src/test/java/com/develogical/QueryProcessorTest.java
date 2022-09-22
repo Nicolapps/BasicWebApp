@@ -23,6 +23,9 @@ public class QueryProcessorTest {
     @Test public void fib() throws Exception {
         assertThat(queryProcessor.process("what is the 12th number in the Fibonacci sequence"), is("144"));
     }
+    @Test public void pow() throws Exception {
+        assertThat(queryProcessor.process("what is 0 to the power of 16"), is("0"));
+    }
 
 
     @Test public void plus() throws Exception {
